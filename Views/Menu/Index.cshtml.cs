@@ -23,7 +23,7 @@ namespace Resturants.Views.Menu
         {
             Categories = await _context.Categories
                 .Include(c => c.Meals)
-                .ThenInclude(m => m.Notes)
+                .ThenInclude(m => m.Note)
                 .ToListAsync();
 
             return Page();
