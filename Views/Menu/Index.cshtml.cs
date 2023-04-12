@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using Resturants.Models;
 using Resturants.Data;
-
+using Resturants.Models;
 
 namespace Resturants.Views.Menu
 {
@@ -26,7 +28,12 @@ namespace Resturants.Views.Menu
                 .ThenInclude(m => m.Note)
                 .ToListAsync();
 
-            return Page();
+            var model = new IndexModel(_context)
+            {
+                Categories = Categories
+            };
+
+            return View(model);
         }
     }
 }
