@@ -1,5 +1,4 @@
-﻿#nullable disable
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -25,5 +24,10 @@ namespace Resturants.Models
 
         [ForeignKey("CategoryID")]
         public Category Category { get; set; }
+
+        public int? NotesID { get; set; }
+
+        [ForeignKey("NotesID")]
+        public virtual Note Note { get; set; }
     }
 }
