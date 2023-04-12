@@ -10,9 +10,6 @@
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
   <ItemGroup>
-    <None Remove="Views\Menu\" />
-  </ItemGroup>
-  <ItemGroup>
     <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
   </ItemGroup>
 
@@ -30,7 +27,4 @@
     <PackageReference Include="Microsoft.AspNetCore.HttpsPolicy" Version="2.2.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Views\Menu\" />
-  </ItemGroup>
 </Project>

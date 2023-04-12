@@ -20,10 +20,10 @@ namespace Resturants.Models
 
         [Required]
         [Display(Name = "Category")]
-        public int CategoryID { get; set; }
+        public int? CategoryID { get; set; }
 
         [ForeignKey("CategoryID")]
-        public Category Category { get; set; }
+        public Category? Category { get; set; }
 
         public int? NotesID { get; set; }
 
