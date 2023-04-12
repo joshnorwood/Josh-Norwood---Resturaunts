@@ -1,22 +1,23 @@
-﻿@model List<Resturants.Models.Category>
+﻿@page
+@model Resturants.Views.Menu.IndexModel
 @{
-    ViewData["Title"] = "Menu";
+    ViewData["Title"] = "Index";
 }
 
-<h2>Notes</h2>
+<h2>Menu</h2>
 
-@foreach (var category in Model)
+@foreach (var category in Model.Categories)
 {
-    <h4>Category: @category.ShortDescription</h4>
-
+    <h4>Category: @category.Name</h4>
     <ul>
         @foreach (var meal in category.Meals)
         {
             <li>
-                @meal.Name @if (meal.Note != null)
-                {<span>@meal.Note.Description</span>}
+                @meal.Name @if (meal.Notes != null)
+                {
+                    <span>. @meal.Notes.Description</span>
+                }
             </li>
         }
     </ul>
 }
-
